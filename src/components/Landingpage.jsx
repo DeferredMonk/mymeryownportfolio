@@ -6,15 +6,16 @@ const Landingpage = () => {
     <div className="landingPage">
       <div className="Introduction">
         <h1>Marco Angeli</h1>
-        <a>
-          <h3>@DeferredMonk</h3>
-        </a>
+        <h3>@DeferredMonk</h3>
         <p>
           Hi! I am Marco a student at XAMK studying to become a full-stack
           developer. <br /> Welcome to my portfolio!
         </p>
       </div>
-      <button>Lets dive in!</button>
+      <a href="#skills">
+        <p>Enter!</p>
+        <img src="chevron-down.svg" alt="arrow icon" className="arrowDown" />
+      </a>
     </div>
   );
 };

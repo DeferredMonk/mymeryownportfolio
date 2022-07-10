@@ -1,27 +1,61 @@
+@import "./mixins"
+
 .landingPage
     height: 100vh
     display: flex
     align-items: center
-.Introduction
-    margin-left:  20%
-    display: block
-    font-family: Source Code Pro
     animation: 4s appear
+    justify-content: space-around
+    @include tablet
+        flex-direction: column
+.Introduction
+    display: block
+    font-family: Source Code Pro   
+    @include tablet
+        text-align: center
 h1
     margin: 0
 h3
     margin: 0
     opacity: 50%
     font-size: 15px
-button
-    border-radius: 50%
-    border: 1px solid darkblue
-    height: 50px
-    width: 50px
+p
+    max-width: 500px
+    @include tablet
+        max-width: 300px
+a
+    color: #110080
+    text-decoration: none
+    animation: 2s appearDelayed
+    padding: 10px 20px 10px 20px
+    width: 100px
+    font-family: Source Code Pro
+    border-radius: 5px
+    box-shadow: 2px 2px 6px 0px #1100805c
+    background-color: #1100801a
+    display: flex
+    justify-content: space-around
+    border: 1px solid transparent
+    cursor: pointer
+    &:hover
+         border: 1px solid #11008015
+         .arrowDown
+            &:hover
+            animation: 1s appear infinite
+    @include tablet
+        margin-top: 0%
+.arrowDown
+    filter: invert(18%) sepia(41%) saturate(5173%) hue-rotate(243deg) brightness(61%) contrast(130%)
+    width: 1.5rem
     
 @keyframes appear
-    from {opacity: 0}
+    0% {opacity: 0}        
+    100% {opacity: 100%}
+
+@keyframes appearDelayed
+    0% {opacity: 0}
+    50% {opacity: 0}         
+    100% {opacity: 100%}
         
-    to {opacity: 100%}
         
     

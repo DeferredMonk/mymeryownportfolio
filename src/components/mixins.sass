@@ -1,0 +1,16 @@
+$small-width: 480px
+$medium-width: 768px
+$large-width: 1255px
+
+@mixin phone 
+  @media (max-width: #{$small-width - 1px}) 
+    @content;
+  
+
+@mixin tablet 
+  @media (max-width: #{$medium-width - 1px}) 
+    @content;
+
+@mixin pc 
+  @media (max-width: #{$large-width - 1px}) 
+    @content;
