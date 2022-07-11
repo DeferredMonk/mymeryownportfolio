@@ -7,7 +7,7 @@ const Landingpage = () => {
       <div className="Introduction">
         <h1>Marco Angeli</h1>
         <h3>@DeferredMonk</h3>
-        <p>
+        <p className="intro">
           Hi! I am Marco a student at XAMK studying to become a full-stack
           developer. <br /> Welcome to my portfolio!
         </p>

@@ -1,5 +1,6 @@
 $small-width: 480px
 $medium-width: 768px
+$medium-large-width: 1024px
 $large-width: 1255px
 
 @mixin phone 
@@ -13,4 +14,8 @@ $large-width: 1255px
 
 @mixin pc 
   @media (max-width: #{$large-width - 1px}) 
+    @content;
+
+@mixin medium-large 
+  @media (max-width: #{$medium-large-width - 1px}) 
     @content;
