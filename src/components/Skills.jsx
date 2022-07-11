@@ -6,16 +6,17 @@ const Skills = () => {
     <div id="skills">
       <div className="wrapper">
         <div className="meContainer">
-          <img className="me" src="/img_2784.jpg" />
+          <img className="me" src="/img_2784.jpg" alt="picture of Marco" />
         </div>
-        <div>
-          <h2>Who am I?</h2>
-          <p>
+        <div className="speech">
+          <h2 className="smallHeader">Who am I?</h2>
+          <p className="speechAboutMe">
             I am a student at XAMK, studying full-stack programming online. I
             got into coding in 2021 while studying in Haaga-Helia open UAS. I
             enjoyed it so much that I decided to continue and embrace it! At the
             moment I work full time as an ICT specialist and study web
             developement during evenings.
+          </p>
             <h4 style={{ marginTop: "1rem", marginBottom: "1rem" }}>I am</h4>
             <ul>
               <li>A team player</li>
@@ -37,12 +38,11 @@ const Skills = () => {
                 Problem solving has become a day to day routine for me.
               </p>
             </ul>
-          </p>
         </div>
       </div>
       <div className="wrapper">
         <div>
-          <h2>Areas of expertise</h2>
+          <h2 className="smallHeader">Areas of expertise</h2>
           <p>During my journey I learned multiple prohramming</p>
         </div>
         <div className="skillIcons">
