@@ -15,10 +15,15 @@
         text-align: center
 h1
     margin: 0
+    @include phone
+        font-size: x-large
 h3
     margin: 0
     opacity: 50%
     font-size: 15px
+    @include phone
+        font-size: small
+        margin-bottom: 15%
 .intro
     max-width: 500px
     @include tablet
@@ -26,7 +31,7 @@ h3
 a
     color: #110080
     text-decoration: none
-    animation: 2s appearDelayed
+    animation: 4s appear
     padding: 10px 20px 10px 20px
     width: 100px
     font-family: Source Code Pro
@@ -42,19 +47,25 @@ a
          .arrowDown
             &:hover
             animation: 1s appear infinite
-    @include tablet
+    @include phone
         margin-top: 0%
+        width: 95%
+        justify-content: center
+        border-radius: 10px 
+.arrowDown
+    @include phone
+        animation: 1s appear infinite
 .arrowDown
     filter: invert(18%) sepia(41%) saturate(5173%) hue-rotate(243deg) brightness(61%) contrast(130%)
     width: 1.5rem
+
+p
+    @include phone
+        font-size: 12px
+        margin: 0 20px 0 20px
     
 @keyframes appear
     0% {opacity: 0}        
-    100% {opacity: 100%}
-
-@keyframes appearDelayed
-    0% {opacity: 0}
-    50% {opacity: 0}         
     100% {opacity: 100%}
         
         

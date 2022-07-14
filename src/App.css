@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&family=Source+Code+Pro:ital,wght@0,400;1,200&display=swap");
 
+.app {
+  height: 100vh;
+}
+
 ::-webkit-scrollbar {
   width: 3px;
 }

@@ -8,6 +8,7 @@
     flex-basis: 50%
     flex-wrap: wrap
     justify-content: space-evenly
+    overflow: scroll
     @include tablet
         flex-direction: column
     @include phone
@@ -22,15 +23,28 @@
         margin: auto
         flex-direction: column
         text-align:justify-all
+.active
+    animation: 3s borderAppear 
+    width: 100%
+.hidden
+    opacity: 0
 .smallHeader
     text-align: center
+    @include phone
+        font-size: 20px
+        margin: 10%
 .speechAboutMe
     @include tablet
         margin: auto
         text-align: justify
         width: 400px
+    @include phone
+        width: auto
+        
 .speech
     width: 500px
+    @include phone
+        width: 80%
 .skillIcons
     display: flex
     flex-wrap: wrap
@@ -49,6 +63,7 @@ h2
     overflow: hidden
     position: relative
     box-shadow: 0px 0px 14px 2px black
+    animation: 10s shadowAppear
     @include medium-large
         width: 300px
         height: 300px
@@ -66,7 +81,31 @@ h2
     -webkit-transform: translateY(-50%) translateX(-50%)
     @include tablet
         width: 225px
-    
 
+.personalSkill
+    font-weight: bold
+    margin: 3% 0 3% 0
+    @include phone
+        font-size: small
+        margin: 3% 0 3% 0
+.desPersSkill
+    margin-left: 5% 
+    @include phone
+        font-size: x-small
+ul
+    list-style-type: none
+    
+@keyframes borderAppear 
+    0% 
+        opacity: 0
+        transform: translate(0, 100px)
+    100%
+        opacity: 1
+        transform: translate(0)
+@keyframes shadowAppear 
+    0% 
+        box-shadow: 0px 0px 0px 0px black
+    100%
+        box-shadow: 0px 0px 14px 2px black
 
     

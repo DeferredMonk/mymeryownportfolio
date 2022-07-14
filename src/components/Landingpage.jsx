@@ -13,7 +13,7 @@ const Landingpage = () => {
         </p>
       </div>
       <a href="#skills">
-        <p>Enter!</p>
+        Enter!
         <img src="chevron-down.svg" alt="arrow icon" className="arrowDown" />
       </a>
     </div>
