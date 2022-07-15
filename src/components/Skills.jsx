@@ -6,7 +6,7 @@ const Skills = () => {
   const wrapperRef = useRef();
   const wrapperRefSkills = useRef();
 
-  const { skillsWrappers, listOfSkills } = useSkills({
+  const { skillsWrappers, listOfSkills, listOfProgLang } = useSkills({
     wrapperRef,
     wrapperRefSkills,
   });
@@ -60,18 +60,25 @@ const Skills = () => {
           <h2 ref={wrapperRefSkills} className="smallHeader">
             Areas of expertise
           </h2>
-          <p>During my journey I learned multiple programming</p>
+          <p className="speechAboutMe">
+            During my journey I've learned multiple programming languages. In
+            2021 I studied in Haaga-Helia Open UAS the basics of JS, HTML and
+            CSS. Now in XAMK I learned about SQL and React. On top of theese in
+            my school we use Git to commit changes to repositories. That way we
+            also learned the basic commands of Git. During this summer I decided
+            to attend Helsinkis universitys Full Stack Open course. This course
+            is still ongoing but until know I've learned the basics of Node.js
+            and how to manipulate a MongoDB database.
+          </p>
+          {/* <ul>
+            {listOfProgLang.map((language, i) => (
+              <li key={i}>{language.language}</li>
+            ))}
+          </ul> */}
         </div>
         <div className="skillIcons">
           {listOfSkills.map((img, i) => (
-            <img
-              className="icon"
-              key={i}
-              src={img}
-              alt={`icon-${i}`}
-              width="96px"
-              height="96px"
-            />
+            <img className="icon" key={i} src={img} alt={`icon-${i}`} />
           ))}
         </div>
       </div>

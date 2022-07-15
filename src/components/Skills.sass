@@ -54,6 +54,9 @@
     max-width: 450px
     @include tablet
         margin: auto
+    @include phone
+        margin-top: 2rem
+        width: 60%
 h2
     margin-bottom: 2rem 
 .meContainer
@@ -94,6 +97,13 @@ h2
         font-size: x-small
 ul
     list-style-type: none
+
+.icon
+    width: 96px
+    height: 96px
+    @include phone
+        width: 64px
+        height: 64px
     
 @keyframes borderAppear 
     0% 
