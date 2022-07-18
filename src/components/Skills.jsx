@@ -6,7 +6,7 @@ const Skills = () => {
   const wrapperRef = useRef();
   const wrapperRefSkills = useRef();
 
-  const { skillsWrappers, listOfSkills, listOfProgLang } = useSkills({
+  const { skillsWrappers, listOfSkills } = useSkills({
     wrapperRef,
     wrapperRefSkills,
   });

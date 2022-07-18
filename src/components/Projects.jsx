@@ -1,22 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import Project from "./Project";
 import "./Projects.sass";
 
 const Projects = () => {
+  const [show, setShow] = useState(false);
   return (
     <div id="projects">
-      <h1 className="projectsHeader">Projects</h1>
-      <div className="wrapper">
-        <iframe
-          src="https://birders-diary.netlify.app/"
-          width="400px"
-          height="600px"
-          className="project"
-          title="project"
-        />
-        <div className="projectDesc">
-          <h2>Bird spotter</h2>
-        </div>
-      </div>
+      <button
+        onClick={() => {
+          setShow(!show);
+        }}
+      >
+        test
+      </button>
+      <Project show={show} />
     </div>
   );
 };

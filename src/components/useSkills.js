@@ -26,20 +26,6 @@ export const useSkills = ({ wrapperRef, wrapperRefSkills }) => {
     "/icons8-sass-96.png",
     "/icons8-sql-96.png",
   ];
-  const listOfProgLang = [
-    {
-      language: "JavaScript",
-      description:
-        "I've completed in Haaga-Helia UAS a JS basics course where I learned about variables, arrays, forloops, objects and in general the basics of JavaScript.",
-    },
-    { language: "HTML5", description: "" },
-    { language: "CSS3", description: "" },
-    { language: "Node.js", description: "" },
-    { language: "Git", description: "" },
-    { language: "ReactJS", description: "" },
-    { language: "Sass", description: "" },
-    { language: "SQL", description: "" },
-  ];
 
-  return { skillsWrappers, listOfSkills, listOfProgLang };
+  return { skillsWrappers, listOfSkills };
 };
