@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import "./Skills.sass";
-import { useSkills } from "./useSkills";
+import { useSkills } from "./Hooks/useSkills";
 
 const Skills = () => {
   const wrapperRef = useRef();
