@@ -22,7 +22,7 @@ function App() {
               </React.Fragment>
             }
           />
-          <Route path="/project/:id" element={<Project />} />
+          <Route path="/projects/:id" element={<Project />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -5,12 +5,16 @@ import Project from "./Project";
 import "./Projects.sass";
 
 const Projects = () => {
-
-  const listOfProjects  = useProject()
+  const listOfProjects = useProject();
 
   return (
     <div id="projects">
-      {listOfProjects.map((project) => <h2><Link to={`/projects/${project.id}`}>{project.name}</Link> </h2>)}
+      <h1 style={{ textAlign: "center" }}>My projects!</h1>
+      {listOfProjects.map((project) => (
+        <div>
+          <Link to={`/projects/${project.id}`}>{project.name}</Link>{" "}
+        </div>
+      ))}
     </div>
   );
 };
