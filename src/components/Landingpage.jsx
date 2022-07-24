@@ -12,7 +12,7 @@ const Landingpage = () => {
           developer. <br /> Welcome to my portfolio!
         </p>
       </div>
-      <a href="#skills">
+      <a href="#skills" className="InteractionButton">
         Enter!
         <img src="chevron-down.svg" alt="arrow icon" className="arrowDown" />
       </a>

@@ -1,14 +1,14 @@
 @import "./mixins"
 
 #container
-    background: #3434344f
+    background: rgba(17,0,128,0.3085609243697479)   
     height: 100vh
     display: flex
     
 .project
     background: white
     border: 1px solid whitesmoke
-    //border-radius: 25px
+    border-radius: 10px
     width: 60%
     height: 80%
     box-shadow: 1px 1px 7px 1px #110080
@@ -16,6 +16,7 @@
     display: flex
     justify-content: space-evenly
     align-items: center
+    position: relative
     @include pc
         width: 80%
     @include medium-large 
@@ -52,3 +53,10 @@ hr
 .listOfitems
     text-align: center
     padding: 0
+.container
+    display: flex
+    width: 100%
+    margin-top: 10%
+.button
+    width: 100%
+    margin: 2%

@@ -9,12 +9,29 @@ const Projects = () => {
 
   return (
     <div id="projects">
-      <h1 style={{ textAlign: "center" }}>My projects!</h1>
-      {listOfProjects.map((project) => (
-        <div>
-          <Link to={`/projects/${project.id}`}>{project.name}</Link>{" "}
-        </div>
-      ))}
+      <h1 className="projectsHeader">My projects!</h1>
+      <div className="ProjectsContainer">
+        {listOfProjects.map((project) => (
+          <div className="singleProjectContainer">
+            <h2>{project.name}</h2>
+            <div className="singleProject">
+              <iframe src={project.src} className="Projectsframe" />
+              <Link
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  display: "inline-block",
+                  width: "100%",
+                  height: "100%",
+                  zIndex: "5",
+                }}
+                to={`/projects/${project.id}`}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

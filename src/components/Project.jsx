@@ -25,6 +25,18 @@ const Project = () => {
     <>
       <div id="container" ref={ref}>
         <div className="project">
+          <Link
+            style={{
+              position: "absolute",
+              top: "0",
+              left: "0",
+              margin: "2%",
+              transform: "rotate(180deg)",
+            }}
+            to="/"
+          >
+            <img src="/icons8-arrow-50.png" />
+          </Link>
           {width > 470 ? (
             <iframe
               src={project.src}
@@ -51,6 +63,10 @@ const Project = () => {
                 <li className="li">{item}</li>
               ))}
             </ul>
+            <div className="container">
+              <a className="InteractionButton button">Source code!</a>
+              <a className="InteractionButton button">View full site!</a>
+            </div>
           </div>
         </div>
       </div>
