@@ -9,8 +9,6 @@ const Project = () => {
   const ref = useRef();
   const [width, setWidth] = useState(0);
 
-  console.log(listOfProjects);
-
   let project = listOfProjects.filter(
     (project) => project.id === Number(id)
   )[0];
@@ -18,8 +16,6 @@ const Project = () => {
   useLayoutEffect(() => {
     setWidth(ref.current.offsetWidth);
   }, []);
-
-  console.log(width);
 
   return (
     <>
@@ -37,22 +33,18 @@ const Project = () => {
           >
             <img src="/icons8-arrow-50.png" />
           </Link>
-          {width > 470 ? (
+          {width > 480 && (
             <iframe
-              src={project.src}
+              src={project.src.srcLive}
               className="frame"
               title="project"
               width="360px"
               height="500px"
             />
-          ) : (
-            <a href={project.src} target="_blank">
-              Take a peek!
-            </a>
           )}
 
           <div className="projectExplanation">
-            <h2 style={{ marginBottom: "2%" }}>{project.name}</h2>
+            <h2>{project.name}</h2>
             <hr />
             <p>{project.desctrition.application}</p>
             <hr />
@@ -64,8 +56,20 @@ const Project = () => {
               ))}
             </ul>
             <div className="container">
-              <a className="InteractionButton button">Source code!</a>
-              <a className="InteractionButton button">View full site!</a>
+              <a
+                className="InteractionButton projectbutton"
+                href={project.src.srcSource}
+                target="_blank"
+              >
+                Source code!
+              </a>
+              <a
+                className="InteractionButton projectbutton"
+                href={project.src.srcLive}
+                target="_blank"
+              >
+                View full site!
+              </a>
             </div>
           </div>
         </div>

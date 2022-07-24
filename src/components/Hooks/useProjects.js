@@ -2,7 +2,10 @@ export const useProject = () => {
   const listOfProjects = [
     {
       name: "Bird spotter",
-      src: "https://birders-diary.netlify.app/",
+      src: {
+        srcLive: "https://birders-diary.netlify.app/",
+        srcSource: "https://github.com/DeferredMonk/Birdspots",
+      },
       id: 1,
       createdUsing: ["ReactJS", "MUI", "React-Router", "Date-fns"],
       desctrition: {
@@ -14,7 +17,10 @@ export const useProject = () => {
     },
     {
       name: "Angelis Pizza!",
-      src: "https://angelispizza.netlify.app/englanniksi/",
+      src: {
+        srcLive: "https://angelispizza.netlify.app/englanniksi/",
+        srcSource: "https://github.com/DeferredMonk/angelis_pizza",
+      },
       id: 2,
       createdUsing: ["HTML", "CSS"],
       desctrition: {
@@ -26,7 +32,10 @@ export const useProject = () => {
     },
     {
       name: "Portfolio",
-      src: "https://birders-diary.netlify.app/",
+      src: {
+        srcLive: "https://birders-diary.netlify.app/",
+        srcSource: "https://github.com/DeferredMonk/mymeryownportfolio",
+      },
       id: 3,
       createdUsing: ["ReactJS", "React-Router", "SASS"],
       desctrition: {
@@ -38,7 +47,10 @@ export const useProject = () => {
     },
     {
       name: "Laiterekisteri",
-      src: "https://birders-diary.netlify.app/",
+      src: {
+        srcLive: "https://birders-diary.netlify.app/",
+        srcSource: "https://github.com/DeferredMonk/mymeryownportfolio",
+      },
       id: 4,
       createdUsing: ["ReactJS", "MUI", "React-Router"],
       desctrition: {
