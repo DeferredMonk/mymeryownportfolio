@@ -6,6 +6,7 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
                 <Landingpage />
                 <Skills />
                 <Projects />
+                <Footer />
               </React.Fragment>
             }
           />

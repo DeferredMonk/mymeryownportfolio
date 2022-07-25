@@ -21,18 +21,20 @@ const Project = () => {
     <>
       <div id="container" ref={ref}>
         <div className="project">
-          <Link
-            style={{
-              position: "absolute",
-              top: "0",
-              left: "0",
-              margin: "2%",
-              transform: "rotate(180deg)",
-            }}
-            to="/"
-          >
-            <img src="/icons8-arrow-50.png" />
-          </Link>
+          {width >= 480 && (
+            <Link
+              style={{
+                position: "absolute",
+                top: "0",
+                left: "0",
+                margin: "2%",
+                transform: "rotate(180deg)",
+              }}
+              to="/#projects"
+            >
+              <img src="/icons8-arrow-50.png" />
+            </Link>
+          )}
           {width > 480 && (
             <iframe
               src={project.src.srcLive}
