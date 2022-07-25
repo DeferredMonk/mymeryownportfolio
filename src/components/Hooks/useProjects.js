@@ -33,7 +33,7 @@ export const useProject = () => {
     {
       name: "Portfolio",
       src: {
-        srcLive: "https://birders-diary.netlify.app/",
+        srcLive: "https://deferredmonk.netlify.app/",
         srcSource: "https://github.com/DeferredMonk/mymeryownportfolio",
       },
       id: 3,
