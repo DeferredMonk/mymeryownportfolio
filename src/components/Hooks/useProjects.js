@@ -46,16 +46,16 @@ export const useProject = () => {
       },
     },
     {
-      name: "Laiterekisteri",
+      name: "Device registry",
       src: {
-        srcLive: "https://birders-diary.netlify.app/",
-        srcSource: "https://github.com/DeferredMonk/mymeryownportfolio",
+        srcLive: "https://dmaan005xamk.github.io/laiterekisteri/#/",
+        srcSource: "https://github.com/DeferredMonk/device_registry",
       },
       id: 4,
       createdUsing: ["ReactJS", "MUI", "React-Router"],
       desctrition: {
         application:
-          "This application is my ReactJS course final project. It is a device registry that lets you keep a record of your lend devices.",
+          "This application is my ReactJS course final project. It is a device registry that lets you keep a record of your lend devices.(Not responsive)",
         technical:
           "My device registry is created using ReactJS. Importing MUI:s Data-grid component to display data in a clean way. In my device registry you can add, modify and delete registrys. Input fields have error handlers. This device registry is not responsive and will only work on a bigger screen.",
       },
