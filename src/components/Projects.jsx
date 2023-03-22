@@ -1,9 +1,7 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useProject } from "./Hooks/useProjects";
-import Project from "./Project";
-import "./Projects.sass";
-
+import "../sass/Projects.sass";
 const Projects = () => {
   const listOfProjects = useProject();
   const ref = useRef();

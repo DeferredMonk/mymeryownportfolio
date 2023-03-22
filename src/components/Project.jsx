@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useProject } from "./Hooks/useProjects";
-import "./Project.sass";
+import "../sass/Project.sass"
 
 const Project = () => {
   const { id } = useParams();

@@ -7,6 +7,9 @@ import Skills from "./components/Skills";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import Footer from "./components/Footer";
+import { strings } from "./utils/localization";
+
+strings.setLanguage("en");
 
 function App() {
   return (

@@ -1,16 +1,27 @@
 import React from "react";
-import "./Landingpage.sass";
+import { strings } from "../utils/localization";
+import ListItemText from "./List/ListItemText";
+import ListItemHeader from "./List/ListItemHeader";
+import "../sass/Landingpage.sass";
 
 const Landingpage = () => {
   return (
     <div className="landingPage">
       <div className="Introduction">
-        <h1>Marco Angeli</h1>
-        <h3>@DeferredMonk</h3>
-        <p className="intro">
-          Hi! I am Marco a student at XAMK studying to become a full-stack
-          developer. <br /> Welcome to my portfolio!
-        </p>
+        <ListItemHeader
+          primary={strings.contactInfo.name}
+          secondary={strings.contactInfo.username}
+        />
+        <div className="intro" style={{ marginTop: "20px" }}>
+          <ListItemText
+            primary={strings.contactInfo.position}
+            secondary={strings.status.work}
+          />
+          <ListItemText
+            primary={strings.contactInfo.schoolPosition}
+            secondary={strings.status.schoolShort}
+          />
+        </div>
       </div>
       <a href="#skills" className="InteractionButton">
         Enter!
