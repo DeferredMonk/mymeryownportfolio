@@ -2,14 +2,15 @@ import React, { useLayoutEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useProject } from "../Hooks/useProjects";
 import "../../sass/Project.sass";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
 const Project = () => {
   const { id } = useParams();
-  const listOfProjects = useProject();
+  const [listOfEFProjects, listOfBEProjects] = useProject();
   const ref = useRef();
   const [width, setWidth] = useState(0);
 
-  let project = listOfProjects.filter(
+  const project = listOfEFProjects.filter(
     (project) => project.id === Number(id)
   )[0];
 
@@ -28,11 +29,10 @@ const Project = () => {
                 top: "0",
                 left: "0",
                 margin: "2%",
-                transform: "rotate(180deg)",
               }}
               to="/#projects"
             >
-              <img src="/icons8-arrow-50.png" />
+              <ArrowBackIosNewIcon />
             </Link>
           )}
           {width > 480 && (
