@@ -56,7 +56,7 @@ export const strings = new LocalizedStrings({
          by creating one application with each library. 
          During the Back-end section, I learned C# by making a small console game using classes, 
          interfaces, abstract classes, and unit testing. 
-         Then I learned how to create CRUD operations using SQL queries. We created a small movie 
+         Then I learned how to create CRUD operations with C# using SQL queries. We created a small movie 
          API for our last project using the code first method and entity framework.`,
       },
     },
