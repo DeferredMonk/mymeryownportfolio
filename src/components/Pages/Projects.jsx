@@ -1,9 +1,9 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { useProject } from "./Hooks/useProjects";
-import "../sass/Projects.sass";
+import { useProject } from "../Hooks/useProjects";
+import "../../sass/Projects.sass";
 const Projects = () => {
-  const listOfProjects = useProject();
+  const [listOfFEProjects, listOfBEProjects] = useProject();
   const ref = useRef();
 
   const [width, setWidth] = useState(0);
@@ -19,8 +19,13 @@ const Projects = () => {
         Find listed below a list of projects created by me during school classes
         and free time!
       </p>
+
+      <div className="projectsHeaderTypeContainer">
+        <h2 className="projectsHeaderType">Front-end</h2>
+      </div>
+
       <div className="ProjectsContainer">
-        {listOfProjects.map((project) => (
+        {listOfFEProjects.map((project) => (
           <div className="singleProjectContainer">
             {width <= 480 ? (
               <Link
@@ -52,6 +57,10 @@ const Projects = () => {
           </div>
         ))}
       </div>
+      {/* <h5 className="projectsHeader">Back-end</h5>
+      {listOfBEProjects.map((p) => (
+        <div style={{}}>{p.name}</div>
+      ))} */}
     </div>
   );
 };

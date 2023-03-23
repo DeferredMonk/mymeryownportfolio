@@ -1,8 +1,7 @@
 import React, { useRef } from "react";
-import { useSkills } from "./Hooks/useSkills";
-import { CsharpOriginal } from "devicons-react";
-import "../sass/Skills.sass";
-import { strings } from "../utils/localization";
+import { useSkills } from "../Hooks/useSkills";
+import "../../sass/Skills.sass";
+import { strings } from "../../utils/localization";
 
 const Skills = () => {
   const wrapperRef = useRef();

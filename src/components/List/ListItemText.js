@@ -1,5 +1,4 @@
 import React from "react";
-import { strings } from "../../utils/localization";
 
 const ListItemText = ({ primary, secondary }) => {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
-import { strings } from "../utils/localization";
-import ListItemText from "./List/ListItemText";
-import ListItemHeader from "./List/ListItemHeader";
-import "../sass/Landingpage.sass";
+import { strings } from "../../utils/localization";
+import ListItemText from "../List/ListItemText";
+import ListItemHeader from "../List/ListItemHeader";
+import "../../sass/Landingpage.sass";
 
 const Landingpage = () => {
   return (
