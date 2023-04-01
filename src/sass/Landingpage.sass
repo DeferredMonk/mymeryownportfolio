@@ -52,13 +52,12 @@ h3
         width: 95%
         justify-content: center
         border-radius: 10px 
-.arrowDown
-    @include phone
-        animation: 1s appear infinite
+
 .arrowDown
     filter: invert(18%) sepia(41%) saturate(5173%) hue-rotate(243deg) brightness(61%) contrast(130%)
     width: 1.5rem
-
+    @include phone
+        animation: 1s appear infinite
 p
     @include phone
         font-size: 18px

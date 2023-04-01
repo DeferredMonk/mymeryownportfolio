@@ -1,0 +1,30 @@
+@import "mixins.sass"
+
+.card
+    background-color: white
+    height: 200px
+    display: flex
+    max-width: 400px
+    border-radius: 15px
+    box-shadow: 0 0 15px rgb(0, 0, 0)
+    font-family: Source Code Pro
+    overflow: hidden
+    &:hover
+        cursor: pointer
+        .arrowDown
+            animation: 1s appear infinite
+.cardContentWrapper
+    box-sizing: content-box
+    height: 100%
+    width: 100%
+    display: flex
+    flex-direction: column
+.cardTitle
+    margin: 25px
+    margin-bottom: 0 
+    margin-left: 20px 
+.cardContent
+    margin: auto 20px
+.right
+    transform: rotate(-90deg)
+    margin: 20px

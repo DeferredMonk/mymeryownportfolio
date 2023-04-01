@@ -48,9 +48,9 @@ const Project = () => {
           <div className="projectExplanation">
             <h2>{project.name}</h2>
             <hr />
-            <p>{project.desctrition.application}</p>
+            <p>{project.description.application}</p>
             <hr />
-            <p>{project.desctrition.technical}</p>
+            <p>{project.description.technical}</p>
             <h4 className="createdWith">Created using</h4>
             <ul className="listOfitems">
               {project.createdUsing.map((item) => (

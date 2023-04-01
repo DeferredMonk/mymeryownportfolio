@@ -15,7 +15,7 @@ export const useProject = () => {
         "HTML",
         "SASS",
       ],
-      desctrition: {
+      description: {
         application:
           "Lost in translation is a application that translates text into sign language.",
         technical: `This application translates text into sign language. This was a three-person project. 
@@ -34,7 +34,7 @@ export const useProject = () => {
     //   },
     //   id: 5,
     //   createdUsing: ["JavaScript", "Bootstrap", "HTML", "CSS"],
-    //   desctrition: {
+    //   description: {
     //     application:
     //       "Komputer store is a web page where you can gain money by working, take loans and buy laptops.",
     //     technical:
@@ -49,7 +49,7 @@ export const useProject = () => {
       },
       id: 2,
       createdUsing: ["HTML", "CSS"],
-      desctrition: {
+      description: {
         application:
           "My very first project. A web site for an immaginary pizzeria.",
         technical:
@@ -64,7 +64,7 @@ export const useProject = () => {
       },
       id: 3,
       createdUsing: ["ReactJS", "React-Router", "SASS"],
-      desctrition: {
+      description: {
         application:
           "This is my personal portfolio created with patience and love!",
         technical:
@@ -86,7 +86,7 @@ export const useProject = () => {
         "Glitch",
         "Netlify",
       ],
-      desctrition: {
+      description: {
         application:
           "Pokemon trainer allows you to browse all of the pokemons and add them to your collection. From the collection you can also delete a pokemon.",
         technical:
@@ -103,7 +103,7 @@ export const useProject = () => {
       },
       id: 1,
       createdUsing: ["C#", "Visual Studio"],
-      desctrition: {
+      description: {
         application:
           "RPG heroes is a small RPG console game made with C#. RPG Heroes enables you to play with four different classes and equip weapons and armors.",
         technical: `The purpose of this project was to enable me to learn C# 
@@ -126,7 +126,7 @@ export const useProject = () => {
         "ASP.NET Core",
         "Entity framework",
       ],
-      desctrition: {
+      description: {
         application:
           "MovieCharacterAPI is an API created with the code first method. Using Entity framework(EF) dummy data is inserted while the database and tables are created.",
         technical: `Using EF the API handles all CRUD operations. There are also custom operations
@@ -142,7 +142,7 @@ export const useProject = () => {
       },
       id: 2,
       createdUsing: ["Python", "Pygame"],
-      desctrition: {
+      description: {
         application:
           "Running shoes on is a small 2D game made with pygame. The goal is to jump from moving platforms and reach the goal",
         technical: `This project was my first experience about object-oriented programming and took me approximately 
@@ -158,7 +158,7 @@ export const useProject = () => {
       },
       id: 4,
       createdUsing: ["C#", "SQL Client", "MS SQL Server"],
-      desctrition: {
+      description: {
         application:
           "Small application created to learn how to make crud operations in C#.",
         technical: `A two part assignment. The first part of the assignment (sql_crud_operations_with_csharp) 

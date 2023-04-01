@@ -2,6 +2,7 @@ import React, { useLayoutEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useProject } from "../Hooks/useProjects";
 import "../../sass/Projects.sass";
+import BeProject from "../project/BeProject";
 const Projects = () => {
   const [listOfFEProjects, listOfBEProjects] = useProject();
   const ref = useRef();
@@ -57,10 +58,12 @@ const Projects = () => {
           </div>
         ))}
       </div>
-      {/* <h2 className="projectsHeaderType">Back-end</h2>
-      {listOfBEProjects.map((p) => (
-        <div className="singleProject">{p.name}</div>
-      ))} */}
+      <h2 className="projectsHeaderType">Back-end</h2>
+      <div className="ProjectsContainer">
+        {listOfBEProjects.map((p) => (
+          <BeProject project={p} />
+        ))}
+      </div>
     </div>
   );
 };
