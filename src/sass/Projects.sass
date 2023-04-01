@@ -28,13 +28,16 @@
     width: 100%
     height: auto
     justify-content: space-around
+    max-width: 1920px
     align-items: center
+    margin: auto
+    margin-bottom: 2%
     @include phone
         justify-content: center
         
 .singleProject
     height: 500px
-    width: 320px
+    width:100%
     background-color: white
     position: relative
     border-radius: 10px
@@ -47,7 +50,12 @@
 .singleProjectContainer
     text-align: center
     font-family: Source Code Pro
+    max-width: 850px    
+    flex: 50%
+    width: 100%
     margin: 2%
+    @include medium-large
+        max-width: 400px
 .projectsDescription
     text-align: center
     font-family: Source Code Pro

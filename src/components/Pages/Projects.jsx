@@ -57,9 +57,9 @@ const Projects = () => {
           </div>
         ))}
       </div>
-      {/* <h5 className="projectsHeader">Back-end</h5>
+      {/* <h2 className="projectsHeaderType">Back-end</h2>
       {listOfBEProjects.map((p) => (
-        <div style={{}}>{p.name}</div>
+        <div className="singleProject">{p.name}</div>
       ))} */}
     </div>
   );
