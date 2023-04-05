@@ -93,15 +93,12 @@ export const useProject = () => {
           "Pokémon trainer is a web application created with Angular Framework. This application fetches data from pokeApi and stores data into a json file stored in glitch. During this project I learned the basics of Angular.",
       },
     },
-  ];
-
-  const listOfBEProjects = [
     {
       name: "RPG heroes",
       src: {
         srcSource: "https://github.com/DeferredMonk/ConsoleBasedRpgGame",
       },
-      id: 1,
+      id: 5,
       createdUsing: ["C#", "Visual Studio"],
       description: {
         application:
@@ -118,7 +115,7 @@ export const useProject = () => {
       src: {
         srcSource: "https://github.com/DeferredMonk/MovieCharactersAPI",
       },
-      id: 3,
+      id: 6,
       createdUsing: [
         "C#",
         "SQL",
@@ -140,7 +137,7 @@ export const useProject = () => {
       src: {
         srcSource: "https://github.com/DeferredMonk/RunningShoesOn",
       },
-      id: 2,
+      id: 7,
       createdUsing: ["Python", "Pygame"],
       description: {
         application:
@@ -156,7 +153,7 @@ export const useProject = () => {
         srcSource:
           "https://github.com/DeferredMonk/sql_crud_operations_with_csharp",
       },
-      id: 4,
+      id: 8,
       createdUsing: ["C#", "SQL Client", "MS SQL Server"],
       description: {
         application:
@@ -169,5 +166,5 @@ export const useProject = () => {
       },
     },
   ];
-  return [listOfFEProjects, listOfBEProjects];
+  return [listOfFEProjects];
 };
