@@ -1,18 +1,18 @@
-import React, { useLayoutEffect, useRef, useState } from "react"
-import { Link } from "react-router-dom"
-import { useProject } from "../Hooks/useProjects"
-import "../../sass/Projects.sass"
-import BeProject from "../project/BeProject"
-import FeProject from "../project/FeProject"
+import React, { useLayoutEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { useProject } from "../Hooks/useProjects";
+import "../../sass/Projects.sass";
+import BeProjectCard from "../project/BeProjectCard";
+import FeProjectCard from "../project/FeProjectCard";
 const Projects = () => {
-  const [listOfFEProjects] = useProject()
-  const ref = useRef()
+  const [listOfFEProjects] = useProject();
+  const ref = useRef();
 
-  const [width, setWidth] = useState(0)
+  const [width, setWidth] = useState(0);
 
   useLayoutEffect(() => {
-    setWidth(ref.current.offsetWidth)
-  }, [])
+    setWidth(ref.current.offsetWidth);
+  }, []);
 
   return (
     <div id="projects" ref={ref}>
@@ -22,16 +22,16 @@ const Projects = () => {
         and free time!
       </p>
       <div className="ProjectsContainer">
-        {listOfFEProjects.map((project) =>
-          project.src ? (
-            <FeProject project={project} width={width} />
+        {listOfFEProjects.map((project) => {
+          return project.src.srcLive ? (
+            <FeProjectCard project={project} width={width} />
           ) : (
-            <BeProject project={project} />
-          )
-        )}
+            <BeProjectCard project={project} width={width} />
+          );
+        })}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
