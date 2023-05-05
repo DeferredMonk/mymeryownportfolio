@@ -1,6 +1,31 @@
 export const useProject = () => {
   const listOfFEProjects = [
     {
+      name: "BloggersMastersClient",
+      src: {
+        srcLive: "https://bloggersmasters.netlify.app/",
+        srcSource: "https://github.com/DeferredMonk/bloggersmastersclient",
+      },
+      id: 2,
+      createdUsing: [
+        "React",
+        "ContextAPI",
+        "Material UI",
+        "CSS",
+        "Keycloak"
+      ],
+      description: {
+        application:
+          "BloggersMasters is an application to publish toughts as blogs. This project was a schoolproject for two programming courses.",
+        technical: `This application uses keycloak for authentication and for user creation. 
+                    Users can sign in, post new blogs and modify worte blogs. 
+                    Guests can like and dislike posts freely. 
+                    Signed in users can like and dislike others posts. 
+                    When a new post is created the reposponse of the post request is added to the list of posts.
+                    When changes are applied to existing posts the response of the patch request is updated to the post object.
+                    This is done to improve the performance of the application.`,
+      },
+    }, {
       name: "Lost in translation",
       src: {
         srcLive: "https://lost1ntr4nslation.netlify.app/",
@@ -41,21 +66,21 @@ export const useProject = () => {
     //       "This project is created using html, css and js. During this assingnement I improved my vanilla JavaScript skills and DOM manipulation skills. ",
     //   },
     // },
-    {
-      name: "Angelis Pizza!",
-      src: {
-        srcLive: "https://angelispizza.netlify.app/englanniksi/",
-        srcSource: "https://github.com/DeferredMonk/angelis_pizza",
-      },
-      id: 2,
-      createdUsing: ["HTML", "CSS"],
-      description: {
-        application:
-          "My very first project. A web site for an immaginary pizzeria.",
-        technical:
-          "Angeli's Pizza! is created purely with css and html. This is my first project creating this project I learned the basics of HTML and CSS.",
-      },
-    },
+    // {
+    //   name: "Angelis Pizza!",
+    //   src: {
+    //     srcLive: "https://angelispizza.netlify.app/englanniksi/",
+    //     srcSource: "https://github.com/DeferredMonk/angelis_pizza",
+    //   },
+    //   id: 2,
+    //   createdUsing: ["HTML", "CSS"],
+    //   description: {
+    //     application:
+    //       "My very first project. A web site for an immaginary pizzeria.",
+    //     technical:
+    //       "Angeli's Pizza! is created purely with css and html. This is my first project creating this project I learned the basics of HTML and CSS.",
+    //   },
+    // },
     {
       name: "Portfolio",
       src: {
@@ -147,22 +172,41 @@ export const useProject = () => {
         On top of everything I learned how to use the Pygame library wicth was pretty fun.`,
       },
     },
+    // {
+    //   name: "SQL CRUD operations with C#",
+    //   src: {
+    //     srcSource:
+    //       "https://github.com/DeferredMonk/sql_crud_operations_with_csharp",
+    //   },
+    //   id: 8,
+    //   createdUsing: ["C#", "SQL Client", "MS SQL Server"],
+    //   description: {
+    //     application:
+    //       "Small application created to learn how to make crud operations in C#.",
+    //     technical: `A two part assignment. The first part of the assignment (sql_crud_operations_with_csharp) 
+    //                 deals with manipulating SQL Server data in Visual Studio using a SQL Client library. 
+    //                 Database used in assignment is Chinook. The C# application is created in repository pattern. 
+    //                 The second part (SuperheroSQLQueries) deals with creating a SuperheroDb database. 
+    //                 Sqripts written in SQL contains creation of tables, relationships and inserts, updates and deletes of data.`,
+    //   },
+    // },
     {
-      name: "SQL CRUD operations with C#",
+      name: "BloggersMastersAPI",
       src: {
         srcSource:
-          "https://github.com/DeferredMonk/sql_crud_operations_with_csharp",
+          "https://github.com/DeferredMonk/BloggersMastersAPI",
       },
-      id: 8,
-      createdUsing: ["C#", "SQL Client", "MS SQL Server"],
+      id: 10,
+      createdUsing: ["C#", "Entity Framework", "ASP.NET Core", "Automapper", "Code first method", "KeyCloak", "SQL Client", "MS SQL Server"],
       description: {
         application:
-          "Small application created to learn how to make crud operations in C#.",
-        technical: `A two part assignment. The first part of the assignment (sql_crud_operations_with_csharp) 
-                    deals with manipulating SQL Server data in Visual Studio using a SQL Client library. 
-                    Database used in assignment is Chinook. The C# application is created in repository pattern. 
-                    The second part (SuperheroSQLQueries) deals with creating a SuperheroDb database. 
-                    Sqripts written in SQL contains creation of tables, relationships and inserts, updates and deletes of data.`,
+          "The Back-end for the full-stack application BloggersMasters. This API is connected to a database and handles HTTP-requests made.",
+        technical: `BloggersMastersAPI is a small API to handle HTTP-requests made. Authentication is handled by keycloak.
+         Only logged users can request their own private posts. Patch requests without authentication
+          are allowed for liking and disliking blogs and viewing public posts. Only logged users can modify their own posts.
+          This was a solo project created for two school courses. The purpose of this assignment was prove my knowledge of C#.
+          This project took approximately 4 days to create. I am planning to expand this more, and to add more functionalities. 
+        `,
       },
     },
   ];
