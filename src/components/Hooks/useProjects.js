@@ -117,25 +117,25 @@ export const useProject = () => {
         technical:
           "Pokémon trainer is a web application created with Angular Framework. This application fetches data from pokeApi and stores data into a json file stored in glitch. During this project I learned the basics of Angular.",
       },
-    },
-    {
-      name: "RPG heroes",
+    },{
+      name: "BloggersMastersAPI",
       src: {
-        srcSource: "https://github.com/DeferredMonk/ConsoleBasedRpgGame",
+        srcSource:
+          "https://github.com/DeferredMonk/BloggersMastersAPI",
       },
-      id: 5,
-      createdUsing: ["C#", "Visual Studio"],
+      id: 10,
+      createdUsing: ["C#", "Entity Framework", "ASP.NET Core", "Automapper", "Code first method", "KeyCloak", "SQL Client", "MS SQL Server"],
       description: {
         application:
-          "RPG heroes is a small RPG console game made with C#. RPG Heroes enables you to play with four different classes and equip weapons and armors.",
-        technical: `The purpose of this project was to enable me to learn C# 
-          fundamentals as deeply as possible. This project too 
-          approximately 10 days to complete. During these ten days I 
-          learned about Classes, Interfaces, Abstract classes, and Object-oriented 
-          programming in general.`,
+          "The Back-end for the full-stack application BloggersMasters. This API is connected to a database and handles HTTP-requests made.",
+        technical: `BloggersMastersAPI is a small API to handle HTTP-requests made. Authentication is handled by keycloak.
+         Only logged users can request their own private posts. Patch requests without authentication
+          are allowed for liking and disliking blogs and viewing public posts. Only logged users can modify their own posts.
+          This was a solo project created for two school courses. The purpose of this assignment was prove my knowledge of C#.
+          This project took approximately 4 days to create. I am planning to expand this more, and to add more functionalities. 
+        `,
       },
-    },
-    {
+    },{
       name: "MovieCharacterAPI",
       src: {
         srcSource: "https://github.com/DeferredMonk/MovieCharactersAPI",
@@ -157,6 +157,24 @@ export const useProject = () => {
                     This was a pair project created in approximately four days.`,
       },
     },
+    {
+      name: "RPG heroes",
+      src: {
+        srcSource: "https://github.com/DeferredMonk/ConsoleBasedRpgGame",
+      },
+      id: 5,
+      createdUsing: ["C#", "Visual Studio"],
+      description: {
+        application:
+          "RPG heroes is a small RPG console game made with C#. RPG Heroes enables you to play with four different classes and equip weapons and armors.",
+        technical: `The purpose of this project was to enable me to learn C# 
+          fundamentals as deeply as possible. This project too 
+          approximately 10 days to complete. During these ten days I 
+          learned about Classes, Interfaces, Abstract classes, and Object-oriented 
+          programming in general.`,
+      },
+    },
+    
     {
       name: "Running Shoes On",
       src: {
@@ -190,25 +208,7 @@ export const useProject = () => {
     //                 Sqripts written in SQL contains creation of tables, relationships and inserts, updates and deletes of data.`,
     //   },
     // },
-    {
-      name: "BloggersMastersAPI",
-      src: {
-        srcSource:
-          "https://github.com/DeferredMonk/BloggersMastersAPI",
-      },
-      id: 10,
-      createdUsing: ["C#", "Entity Framework", "ASP.NET Core", "Automapper", "Code first method", "KeyCloak", "SQL Client", "MS SQL Server"],
-      description: {
-        application:
-          "The Back-end for the full-stack application BloggersMasters. This API is connected to a database and handles HTTP-requests made.",
-        technical: `BloggersMastersAPI is a small API to handle HTTP-requests made. Authentication is handled by keycloak.
-         Only logged users can request their own private posts. Patch requests without authentication
-          are allowed for liking and disliking blogs and viewing public posts. Only logged users can modify their own posts.
-          This was a solo project created for two school courses. The purpose of this assignment was prove my knowledge of C#.
-          This project took approximately 4 days to create. I am planning to expand this more, and to add more functionalities. 
-        `,
-      },
-    },
+    
   ];
   return [listOfFEProjects];
 };
