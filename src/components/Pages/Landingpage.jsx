@@ -13,10 +13,7 @@ const Landingpage = () => {
           secondary={strings.contactInfo.username}
         />
         <div className="intro" style={{ marginTop: "20px" }}>
-          <ListItemText
-            primary={strings.contactInfo.position}
-            secondary={strings.status.work}
-          />
+          <ListItemText primary={strings.contactInfo.position} />
           <ListItemText
             primary={strings.contactInfo.schoolPosition}
             secondary={strings.status.schoolShort}

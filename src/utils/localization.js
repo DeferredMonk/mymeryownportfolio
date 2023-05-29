@@ -6,18 +6,18 @@ export const strings = new LocalizedStrings({
       name: "Marco Angeli",
       username: "DeferredMonk",
       email: "Marcoangeli151@gmail.com",
-      position: ".NET full-stack developer",
+      position: "Full-stack developer",
       schoolPosition: "Bachelor of business administration",
     },
     status: {
-      work: "Experis academy",
+      work: "",
       schoolShort: "Xamk",
       school: "South-Eastern Finland University of Applied Sciences",
     },
     skills: {
       title: "Who am I?",
       description: `
-            I am a motivated web developer working as a .NET full-stack developer at experis academy
+            I am a motivated web developer with four months of experience as a .NET full-stack developer at experis academy
              and soon to be a graduate at South-Eastern Finland University of Applied Sciences. 
             My studies are online. That allowed me to work full-time and study at XAMK at the same time.
             My journey began in 2021 while studying web developement basics in Haaga-Helia open UAS. 
@@ -49,7 +49,7 @@ export const strings = new LocalizedStrings({
       ],
       experticeAreas: {
         title: "Areas of expertise",
-        description: `During the last three months, I've been attending a bootcamp 
+        description: `During the three months at Experis, I've attended a bootcamp 
         at Noroff meant as accelerated learning for working professionals. 
         This bootcamp was divided into three sections front-end, back-end, and final case. 
         The Front-end section helped me deepen my knowledge of Vanilla JavaScript, React, and Angular
