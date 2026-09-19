@@ -3,18 +3,18 @@ $medium-width: 768px
 $medium-large-width: 1024px
 $large-width: 1200px
 
-@mixin phone 
-  @media (max-width: #{$small-width - 1px}) 
-    @content
-  
-@mixin tablet 
-  @media (max-width: #{$medium-width - 1px}) 
+@mixin phone
+  @media (max-width: #{$small-width - 1px})
     @content
 
-@mixin pc 
-  @media (max-width: #{$large-width - 1px}) 
+@mixin tablet
+  @media (max-width: #{$medium-width - 1px})
     @content
 
-@mixin medium-large 
-  @media (max-width: #{$medium-large-width - 1px}) 
+@mixin pc
+  @media (max-width: #{$large-width - 1px})
+    @content
+
+@mixin medium-large
+  @media (max-width: #{$medium-large-width - 1px})
     @content

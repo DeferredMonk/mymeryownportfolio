@@ -1,26 +1,22 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { useProject } from "../Hooks/useProjects";
-import "../../sass/Project.sass";
+import { useParams } from "react-router-dom";
+import styles from "./Project.module.sass";
 import ProjectDetail from "../project/ProjectDetail";
 
-const Project = () => {
+const Project = ({ projects }) => {
   const { id } = useParams();
-  const [listOfEFProjects] = useProject();
   const ref = useRef();
   const [width, setWidth] = useState(0);
 
-  const project = listOfEFProjects.filter(
-    (project) => project.id === Number(id)
-  )[0];
+  const project = projects.find((item) => item.id === id);
 
   useLayoutEffect(() => {
     setWidth(ref.current.offsetWidth);
   }, []);
 
   return (
-    <div id="container" ref={ref}>
-      <ProjectDetail project={project} width={width} />
+    <div id="container" ref={ref} className={styles.container}>
+      {project ? <ProjectDetail project={project} width={width} /> : <p>Project not found.</p>}
     </div>
   );
 };

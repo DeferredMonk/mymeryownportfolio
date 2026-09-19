@@ -1,10 +1,15 @@
 import React from "react";
 
-const ListItemHeader = ({ primary, secondary }) => {
+const ListItemHeader = ({
+  primary,
+  secondary,
+  primaryClassName,
+  secondaryClassName,
+}) => {
   return (
     <>
-      <h1>{primary}</h1>
-      <h3>@{secondary}</h3>
+      <h1 className={primaryClassName}>{primary}</h1>
+      <h3 className={secondaryClassName}>@{secondary}</h3>
     </>
   );
 };

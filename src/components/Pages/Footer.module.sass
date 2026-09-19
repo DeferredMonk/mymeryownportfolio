@@ -1,0 +1,28 @@
+@import "../../sass/mixins.sass"
+
+.footerContainer
+  min-height: 10vh
+  padding: 2rem 6vw
+  background: var(--ink)
+  color: var(--surface)
+
+.footer
+  align-items: center
+  height: 100%
+  display: flex
+  justify-content: space-between
+  @include medium-large
+    flex-direction: column
+
+.Links
+  width: 100px
+  display: flex
+  justify-content: space-evenly
+  @include phone
+    margin-top: 5%
+    margin-bottom: 5%
+
+.info
+  font-family: var(--font-mono)
+  font-size: .8rem
+  color: #d9dee5

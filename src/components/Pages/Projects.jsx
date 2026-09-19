@@ -1,11 +1,9 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import { useProject } from "../Hooks/useProjects";
-import "../../sass/Projects.sass";
+import styles from "./Projects.module.sass";
 import BeProjectCard from "../project/BeProjectCard";
 import FeProjectCard from "../project/FeProjectCard";
-const Projects = () => {
-  const [listOfFEProjects] = useProject();
+
+const Projects = ({ projects }) => {
   const ref = useRef();
 
   const [width, setWidth] = useState(0);
@@ -15,18 +13,19 @@ const Projects = () => {
   }, []);
 
   return (
-    <div id="projects" ref={ref}>
-      <h1 className="projectsHeader">My projects!</h1>
-      <p className="projectsDescription">
+    <div id="projects" ref={ref} className={styles.projects}>
+      <h1 className={styles.projectsHeader}>My projects!</h1>
+      <p className={styles.sectionLabel}>03 / Selected work</p>
+      <p className={styles.projectsDescription}>
         Find listed below a list of projects created by me during school classes
         and free time!
       </p>
-      <div className="ProjectsContainer">
-        {listOfFEProjects.map((project) => {
+      <div className={styles.projectsContainer}>
+        {projects.map((project) => {
           return project.src.srcLive ? (
-            <FeProjectCard project={project} width={width} />
+            <FeProjectCard key={project.id} project={project} width={width} />
           ) : (
-            <BeProjectCard project={project} width={width} />
+            <BeProjectCard key={project.id} project={project} width={width} />
           );
         })}
       </div>

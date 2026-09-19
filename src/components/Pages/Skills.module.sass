@@ -1,0 +1,198 @@
+@import "../../sass/mixins.sass"
+
+.skills
+  min-height: 100vh
+  padding: 8rem 8vw 10rem
+  background: var(--wash)
+  display: flex
+  flex-basis: 50%
+  flex-wrap: wrap
+  justify-content: space-evenly
+  overflow-y: hidden
+  position: relative
+  @include phone
+    height: auto
+
+.sectionLabel
+  color: var(--accent-dark)
+  font-family: var(--font-mono)
+  font-size: .7rem
+  letter-spacing: .08em
+  margin: 0 auto
+  max-width: 1440px
+  text-transform: uppercase
+  width: 100%
+
+.wrapper
+  font-family: var(--font-page)
+  align-items: center
+  display: flex
+  width: 100%
+  justify-content: space-evenly
+  gap: 5rem
+  max-width: 1440px
+  margin: 0 auto
+  padding: 3rem 0
+  @include medium-large
+    margin: auto
+    flex-direction: column
+    text-align: justify-all
+
+.active
+  animation: 3s borderAppear
+  width: 100%
+
+.hidden
+  opacity: 0
+
+.smallHeader
+  text-align: center
+  color: var(--ink)
+  font-size: 2.6rem
+  line-height: 1.1
+  @include phone
+    font-size: 20px
+    margin: 10%
+
+.speechAboutMe
+  color: var(--muted-ink)
+  font-size: 1.05rem
+  @include medium-large
+    margin: auto
+    text-align: justify
+    width: 400px
+  @include phone
+    width: auto
+
+.speech
+  width: 500px
+  line-height: 1.7
+  @include phone
+    width: 80%
+
+.eyebrow
+  color: var(--accent-dark)
+  font-family: var(--font-mono)
+  font-size: .7rem
+  letter-spacing: .08em
+  margin: 0 0 1rem
+  text-transform: uppercase
+
+.strengthsHeader
+  border-top: 1px solid var(--line)
+  color: var(--ink)
+  font-size: 1rem
+  margin: 2rem 0 1rem
+  padding-top: 1rem
+
+.strengths
+  display: grid
+  gap: 1rem 2rem
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+
+.strength
+  border-left: 2px solid var(--accent)
+  padding-left: 1rem
+
+.skillIcons
+  display: flex
+  flex-wrap: wrap
+  gap: 1rem
+  justify-content: space-evenly
+  flex-basis: 33%
+  max-width: 450px
+  @include medium-large
+    margin: auto
+  @include phone
+    margin-top: 2rem
+    width: 60%
+
+.meContainer
+  border-radius: 4px
+  border: 1px solid var(--ink)
+  box-shadow: none
+  flex: 0 0 auto
+  width: 280px
+  height: 360px
+  padding: 12px
+  overflow: hidden
+  position: relative
+  animation: borderAppear 1s ease-out both
+  @include medium-large
+    height: 300px
+    width: 235px
+  @include medium-large
+    height: 220px
+    width: 175px
+    margin: 5% 0
+
+.imageAccent
+  background: var(--accent)
+  height: 5px
+  left: 28px
+  position: absolute
+  top: -10px
+  width: 64px
+
+.me
+  height: 100%
+  object-fit: cover
+  object-position: 68% center
+  width: 100%
+
+.personalSkill
+  color: var(--ink)
+  font-weight: 700
+  margin: 0 0 .35rem
+  @include phone
+    font-size: 18px
+
+.desPersSkill
+  margin: 0
+  color: var(--muted-ink)
+  @include phone
+    font-size: 15px
+
+ul
+  list-style-type: none
+
+.icon
+  width: 96px
+  height: 96px
+  @include phone
+    width: 64px
+    height: 64px
+
+.skillItem
+  align-items: center
+  background: var(--surface)
+  border: 1px solid var(--line)
+  color: var(--ink)
+  display: flex
+  flex-direction: column
+  font-family: var(--font-mono)
+  font-size: .65rem
+  gap: .6rem
+  justify-content: center
+  min-height: 120px
+  padding: .75rem
+  text-align: center
+  transition: border-color .2s ease, transform .2s ease
+  &:hover
+    border-color: var(--accent)
+    transform: translateY(-4px)
+
+@include phone
+  .strengths
+    grid-template-columns: 1fr
+  .skillItem
+    min-height: 100px
+
+@keyframes borderAppear
+  0%
+    opacity: 0
+    transform: translate(0, 100px)
+  100%
+    opacity: 1
+    transform: translate(0)
+

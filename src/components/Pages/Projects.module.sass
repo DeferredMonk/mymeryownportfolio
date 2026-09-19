@@ -1,0 +1,100 @@
+@import "../../sass/mixins.sass"
+
+.projects
+  background: var(--surface)
+  padding: 7rem 6vw
+  min-height: 100vh
+
+.projectsHeader
+  padding-top: 0
+  color: var(--ink)
+  font-family: var(--font-page)
+  text-align: center
+  font-size: 3rem
+  @include phone
+    margin-bottom: 5rem
+    font-size: 30px
+
+.projectsHeaderType
+  padding: 1rem
+  font-family: var(--font-page)
+  text-align: center
+  font-size: 30px
+  width: 100%
+  background-color: rgb(204, 153, 255, 0.3)
+  @include phone
+    margin-bottom: 3rem
+    font-size: 30px
+
+.projectsContainer
+  display: flex
+  flex-wrap: wrap
+  width: 100%
+  min-height: 400px
+  justify-content: space-around
+  max-width: 1920px
+  align-items: center
+  margin: auto
+  margin-bottom: 2%
+  gap: 20px
+  @include phone
+    justify-content: center
+
+.singleProject
+  height: 500px
+  width: 100%
+  background-color: white
+  position: relative
+  border-radius: 10px
+  border: 1px solid var(--line)
+  box-shadow: 0 14px 30px #13223818
+  transition: transform .2s ease, box-shadow .2s ease
+  &:hover
+    transform: translateY(-6px)
+    box-shadow: 0 20px 38px #13223825
+
+.projectsFrame
+  width: 100%
+  height: 100%
+  border-radius: 10px
+  border: 0
+
+.singleProjectContainer
+  text-align: center
+  font-family: var(--font-page)
+  max-width: 850px
+  flex: 50%
+  width: 100%
+  margin: 2%
+  @include medium-large
+    max-width: 400px
+    flex-basis: 100%
+
+.projectsDescription
+  text-align: center
+  font-family: var(--font-page)
+  color: var(--muted-ink)
+  font-size: 1.05rem
+  max-width: 600px
+  margin: 2% auto
+  @include phone
+    font-size: 18px
+    margin: 2% 2rem 5rem 2rem
+
+@include medium-large
+  .projectsContainer
+    flex-direction: column
+  .singleProjectContainer
+    max-width: 700px
+
+.sectionLabel
+  color: var(--accent-dark)
+  font-family: var(--font-mono)
+  font-size: .7rem
+  letter-spacing: .08em
+  margin: 4rem auto 0
+  max-width: 1920px
+  text-transform: uppercase
+
+.button
+  width: 100%

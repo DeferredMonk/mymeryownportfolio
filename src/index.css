@@ -1,3 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  --font-page: "Space Grotesk", sans-serif;
+  --font-mono: "Roboto Mono", monospace;
+  --ink: #132238;
+  --muted-ink: #526173;
+  --paper: #f6f4ef;
+  --surface: #ffffff;
+  --line: #d9dee5;
+  --accent: #e16b4c;
+  --accent-dark: #b94d32;
+  --wash: #e8eef2;
+}
+
 * {
   margin: 0;
   scroll-behavior: smooth;
@@ -16,15 +31,14 @@ img {
 }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: var(--font-page);
+  color: var(--ink);
+  background: var(--paper);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1;
+  line-height: 1.5;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: var(--font-mono);
 }

@@ -20,7 +20,7 @@ import {
 } from "devicons-react";
 import { AzuresqldatabasePlain } from "@beta/devicons-react";
 
-export const useSkills = ({ wrapperRef, wrapperRefSkills }) => {
+export const useSkills = ({ wrapperRef, wrapperRefSkills, skills }) => {
   const isInViewport = useIsInViewPort(wrapperRef);
   const isSkillsInViewport = useIsInViewPort(wrapperRefSkills);
   const [skillsWrappers, setSkillsWrappers] = useState({
@@ -29,30 +29,35 @@ export const useSkills = ({ wrapperRef, wrapperRefSkills }) => {
   });
 
   useEffect(() => {
-    isInViewport && setSkillsWrappers({ ...skillsWrappers, Me: true });
-    isSkillsInViewport &&
-      setSkillsWrappers({ ...skillsWrappers, Skills: true });
+    setSkillsWrappers((current) => ({
+      Me: current.Me || isInViewport,
+      Skills: current.Skills || isSkillsInViewport,
+    }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInViewport, isSkillsInViewport]);
 
-  const listOfSkills = [
-    <CsharpOriginal size={64} />,
-    <JavascriptOriginal size={64} />,
-    <Css3Original size={64} />,
-    <Html5Original size={64} />,
-    <NodejsOriginal size={64} />,
-    <GitOriginal size={64} />,
-    <GithubOriginal size={64} />,
-    <ReactOriginal size={64} />,
-    <SassOriginal size={64} />,
-    <AzureOriginal size={64} />,
-    <MaterialuiOriginal size={64} />,
-    <PythonOriginal size={64} />,
-    <AngularjsOriginal size={64} />,
-    <MongodbOriginal size={64} />,
-    <BootstrapOriginal size={64} />,
-    <TailwindcssPlain size={64} />,
-    <AzuresqldatabasePlain size={64} />,
-  ];
+  const icons = {
+    "C#": CsharpOriginal,
+    JavaScript: JavascriptOriginal,
+    CSS: Css3Original,
+    HTML: Html5Original,
+    "Node.js": NodejsOriginal,
+    Git: GitOriginal,
+    GitHub: GithubOriginal,
+    React: ReactOriginal,
+    SASS: SassOriginal,
+    Azure: AzureOriginal,
+    "Material UI": MaterialuiOriginal,
+    Python: PythonOriginal,
+    Angular: AngularjsOriginal,
+    MongoDB: MongodbOriginal,
+    Bootstrap: BootstrapOriginal,
+    "Tailwind CSS": TailwindcssPlain,
+    "Azure SQL": AzuresqldatabasePlain,
+  };
+  const listOfSkills = skills.map((skill) => {
+    const Icon = icons[skill];
+    return Icon ? <Icon key={skill} size={64} /> : null;
+  });
   return { skillsWrappers, listOfSkills };
 };
