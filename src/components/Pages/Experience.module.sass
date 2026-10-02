@@ -2,6 +2,7 @@
 
 .experience
   background: var(--paper)
+  isolation: isolate
   min-height: 80vh
   padding: 3rem 8vw 4rem
 
@@ -144,6 +145,38 @@
   overflow-wrap: anywhere
   transition: border-color .25s ease
 
+.expandButton
+  align-items: center
+  background: transparent
+  border: 1px solid var(--accent)
+  border-radius: 50%
+  color: var(--accent-dark)
+  cursor: pointer
+  display: none
+  height: 2rem
+  justify-content: center
+  padding: 0
+  position: absolute
+  right: .75rem
+  top: .75rem
+  transition: background-color .2s ease, color .2s ease
+  width: 2rem
+  z-index: 2
+  &:hover
+    background: var(--accent)
+    color: var(--surface)
+
+.expandArrow
+  border-bottom: 1.5px solid currentColor
+  border-right: 1.5px solid currentColor
+  height: .45rem
+  transform: translateY(-.12rem) rotate(45deg)
+  transition: transform .25s ease
+  width: .45rem
+
+.expandButton.expanded .expandArrow
+  transform: translateY(.12rem) rotate(225deg)
+
 .overlayCard
   border-color: var(--accent)
   bottom: auto
@@ -227,6 +260,8 @@
     gap: 1rem
 
 @include medium-large
+  .experience
+    overflow: clip
   .milestone
     height: auto
   .timeline
@@ -240,11 +275,11 @@
     overflow: visible
     padding: 0
   .timelineLine
-    bottom: 0
-    height: auto
-    left: 19px
+    left: 15px
     right: auto
+    height: 0
     top: 0
+    transform: none
     width: 1px
   .milestone
     margin-bottom: 2rem
@@ -260,6 +295,8 @@
       .marker
         left: -2.5rem
         right: auto
+        top: 50%
+        transform: translateY(-50%)
       .card
         text-align: left
       .details ul
@@ -268,28 +305,32 @@
     left: -2.5rem
     margin: 0 0 1rem
     position: absolute
-    top: 0
-    transform: none
+    top: 50%
+    transform: translateY(-50%)
+  .milestone:hover .marker,
+  .milestone:focus-visible .marker,
+  .milestone:has(.marker:hover) .marker,
+  .milestone:has(.card:hover) .marker
+    transform: translateY(-50%) scale(1.2)
   .card
     height: auto
     left: auto
     min-width: 0
-    position: static
+    padding-right: 3.5rem
+    position: relative
     right: auto
+    transition: border-color .25s ease
+  .expandButton
+    display: inline-flex
   .activeMilestone .card
     visibility: visible
+    border-color: var(--accent)
   .overlayCard
     display: none
-  .milestone:hover,
-  .milestone:focus-visible,
-  .milestone:has(.marker:hover),
-  .milestone:has(.card:hover)
-    .card
-      min-height: 0
-      min-width: 0
-      transform: none
   .details
-    max-height: 500px
+    opacity: 0
+    transform: translateY(6px)
+    transition: max-height .3s ease, opacity .18s ease, transform .18s ease
+  .activeMilestone .details
     opacity: 1
     transform: none
-    transition: none

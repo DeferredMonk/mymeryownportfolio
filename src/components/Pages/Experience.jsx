@@ -1,23 +1,49 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import styles from "./Experience.module.sass";
 
-const ExperienceCardContent = ({ experience }) => (
-  <>
-    <p className={styles.period}>
-      {experience.startDate} – {experience.endDate || "Present"}
-    </p>
-    <h3>{experience.title}</h3>
-    <p className={styles.company}>{experience.company}</p>
-    <div className={styles.details}>
-      <p>{experience.summary}</p>
-      <ul>
-        {experience.focus.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
-    </div>
-  </>
-);
+const ExperienceCardContent = ({
+  experience,
+  expandable = false,
+  expanded = false,
+  onToggle,
+}) => {
+  const detailsRef = useRef(null);
+  const detailsStyle = expandable
+    ? { maxHeight: expanded ? `${detailsRef.current?.scrollHeight ?? 0}px` : "0px" }
+    : undefined;
+
+  return (
+    <>
+      {expandable && (
+        <button
+          type="button"
+          className={`${styles.expandButton} ${expanded ? styles.expanded : ""}`}
+          aria-label={`${expanded ? "Collapse" : "Expand"} ${experience.title}`}
+          aria-expanded={expanded}
+          onClick={(event) => {
+            event.stopPropagation();
+            onToggle?.(event);
+          }}
+        >
+          <span className={styles.expandArrow} aria-hidden="true" />
+        </button>
+      )}
+      <p className={styles.period}>
+        {experience.startDate} – {experience.endDate || "Present"}
+      </p>
+      <h3>{experience.title}</h3>
+      <p className={styles.company}>{experience.company}</p>
+      <div ref={detailsRef} className={styles.details} style={detailsStyle}>
+        <p>{experience.summary}</p>
+        <ul>
+          {experience.focus.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </div>
+    </>
+  );
+};
 
 const getOverlayPosition = (activeExperience, height) => {
   const anchor = activeExperience.cardElement.getBoundingClientRect();
@@ -38,6 +64,8 @@ const getOverlayPosition = (activeExperience, height) => {
 
 const Experience = ({ experiences }) => {
   const timelineViewportRef = useRef(null);
+  const timelineRef = useRef(null);
+  const timelineLineRef = useRef(null);
   const overlayRef = useRef(null);
   const closeTimerRef = useRef(null);
   const widthFramesRef = useRef([]);
@@ -47,11 +75,62 @@ const Experience = ({ experiences }) => {
   const [isClosing, setIsClosing] = useState(false);
   const [overlayHeight, setOverlayHeight] = useState(135);
   const [overlayWidth, setOverlayWidth] = useState(150);
+  const [isCompact, setIsCompact] = useState(
+    () => window.matchMedia?.("(max-width: 1023px)").matches ?? false,
+  );
 
   useEffect(() => {
     const viewport = timelineViewportRef.current;
     if (viewport) viewport.scrollLeft = viewport.scrollWidth;
   }, []);
+
+  useEffect(() => {
+    if (!window.matchMedia) return undefined;
+
+    const mediaQuery = window.matchMedia("(max-width: 1023px)");
+    const updateLayout = (event) => setIsCompact(event.matches);
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", updateLayout);
+      return () => mediaQuery.removeEventListener("change", updateLayout);
+    }
+
+    mediaQuery.addListener(updateLayout);
+    return () => mediaQuery.removeListener(updateLayout);
+  }, []);
+
+  useLayoutEffect(() => {
+    const timeline = timelineRef.current;
+    const line = timelineLineRef.current;
+    if (!timeline || !line || !isCompact) return undefined;
+
+    const updateLine = () => {
+      const markers = timeline.querySelectorAll(`.${styles.marker}`);
+      if (!markers.length) return;
+
+      const timelineRect = timeline.getBoundingClientRect();
+      const firstMarkerRect = markers[0].getBoundingClientRect();
+      const lastMarkerRect = markers[markers.length - 1].getBoundingClientRect();
+      const start = firstMarkerRect.top + firstMarkerRect.height / 2 - timelineRect.top;
+      const end = lastMarkerRect.top + lastMarkerRect.height / 2 - timelineRect.top;
+
+      line.style.top = `${start}px`;
+      line.style.height = `${Math.max(0, end - start)}px`;
+    };
+
+    const observer = new ResizeObserver(updateLine);
+    observer.observe(timeline);
+    timeline.querySelectorAll(`.${styles.milestone}`).forEach((milestone) => {
+      observer.observe(milestone);
+    });
+    updateLine();
+
+    window.addEventListener("resize", updateLine);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", updateLine);
+    };
+  }, [experiences, isCompact, activeExperience]);
 
   useEffect(
     () => () => {
@@ -68,7 +147,7 @@ const Experience = ({ experiences }) => {
   }, [activeExperience, overlayHeight, positionRevision]);
 
   useEffect(() => {
-    if (!activeExperience) return undefined;
+    if (!activeExperience || isCompact) return undefined;
 
     const updatePosition = () => setPositionRevision((revision) => revision + 1);
 
@@ -78,7 +157,7 @@ const Experience = ({ experiences }) => {
       window.removeEventListener("resize", updatePosition);
       window.removeEventListener("scroll", updatePosition, true);
     };
-  }, [activeExperience]);
+  }, [activeExperience, isCompact]);
   const openExperience = (experience, index, cardElement) => {
     if (!cardElement) return;
     window.clearTimeout(closeTimerRef.current);
@@ -145,9 +224,18 @@ const Experience = ({ experiences }) => {
   };
 
   const updateOnTimelineScroll = () => {
-    if (activeExperience) {
+    if (activeExperience && !isCompact) {
       setPositionRevision((revision) => revision + 1);
     }
+  };
+
+  const toggleCompactExperience = (experience, index, cardElement) => {
+    if (activeExperience?.index === index) {
+      setActiveExperience(null);
+      return;
+    }
+
+    setActiveExperience({ experience, index, cardElement, expandLeft: false });
   };
 
   return (
@@ -166,8 +254,8 @@ const Experience = ({ experiences }) => {
           className={styles.timelineViewport}
           onScroll={updateOnTimelineScroll}
         >
-          <div className={styles.timeline}>
-            <div className={styles.timelineLine} />
+          <div ref={timelineRef} className={styles.timeline}>
+            <div ref={timelineLineRef} className={styles.timelineLine} />
             {experiences.map((experience, index) => (
               <article
                 className={`${styles.milestone} ${
@@ -176,21 +264,23 @@ const Experience = ({ experiences }) => {
                 key={`${experience.company}-${experience.title}`}
                 tabIndex="0"
                 onMouseEnter={(event) =>
+                  !isCompact &&
                   openExperience(
                     experience,
                     index,
                     event.currentTarget.querySelector(`.${styles.card}`),
                   )
                 }
-                onMouseLeave={scheduleClose}
+                onMouseLeave={() => !isCompact && scheduleClose()}
                 onFocus={(event) =>
+                  !isCompact &&
                   openExperience(
                     experience,
                     index,
                     event.currentTarget.querySelector(`.${styles.card}`),
                   )
                 }
-                onBlur={scheduleClose}
+                onBlur={() => !isCompact && scheduleClose()}
                 onKeyDown={(event) => {
                   if (event.key === "Escape") {
                     closeExperience();
@@ -198,14 +288,32 @@ const Experience = ({ experiences }) => {
                 }}
               >
                 <div className={styles.marker}>{String(index + 1).padStart(2, "0")}</div>
-                <div className={styles.card}>
-                  <ExperienceCardContent experience={experience} />
+                <div
+                  className={styles.card}
+                  onClick={(event) => {
+                    if (isCompact && !event.target.closest("button")) {
+                      toggleCompactExperience(experience, index, event.currentTarget);
+                    }
+                  }}
+                >
+                  <ExperienceCardContent
+                    experience={experience}
+                    expandable={isCompact}
+                    expanded={activeExperience?.index === index}
+                    onToggle={(event) =>
+                      toggleCompactExperience(
+                        experience,
+                        index,
+                        event.currentTarget.closest(`.${styles.card}`),
+                      )
+                    }
+                  />
                 </div>
               </article>
             ))}
           </div>
         </div>
-        {activeExperience && overlayPosition && (
+        {!isCompact && activeExperience && overlayPosition && (
           <div
             ref={overlayRef}
             key={activeExperience.index}
