@@ -1,34 +1,21 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React from "react";
 import styles from "./Projects.module.sass";
-import BeProjectCard from "../project/BeProjectCard";
-import FeProjectCard from "../project/FeProjectCard";
+import ProjectCard from "../project/ProjectCard";
 
 const Projects = ({ projects }) => {
-  const ref = useRef();
-
-  const [width, setWidth] = useState(0);
-
-  useLayoutEffect(() => {
-    setWidth(ref.current.offsetWidth);
-  }, []);
-
   return (
-    <div id="projects" ref={ref} className={styles.projects}>
+    <div id="projects" className={styles.projects}>
       <div className={styles.content}>
-        <h1 className={styles.projectsHeader}>My projects!</h1>
         <p className={styles.sectionLabel}>03 / Selected work</p>
+        <h2 className={styles.projectsHeader}>Selected projects</h2>
         <p className={styles.projectsDescription}>
-          Find listed below a list of projects created by me during school classes
-          and free time!
+          A selection of projects built for real clients, learning, and the joy
+          of making useful things.
         </p>
         <div className={styles.projectsContainer}>
-          {projects.map((project) => {
-            return project.src.srcLive ? (
-              <FeProjectCard key={project.id} project={project} width={width} />
-            ) : (
-              <BeProjectCard key={project.id} project={project} width={width} />
-            );
-          })}
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))}
         </div>
       </div>
     </div>

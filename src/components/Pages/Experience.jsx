@@ -118,8 +118,8 @@ const Experience = ({ experiences }) => {
       const timelineRect = timeline.getBoundingClientRect();
       const firstMarkerRect = markers[0].getBoundingClientRect();
       const lastMarkerRect = markers[markers.length - 1].getBoundingClientRect();
-      const start = firstMarkerRect.top + firstMarkerRect.height / 2 - timelineRect.top;
-      const end = lastMarkerRect.top + lastMarkerRect.height / 2 - timelineRect.top;
+      const start = firstMarkerRect.top - timelineRect.top;
+      const end = lastMarkerRect.bottom - timelineRect.top;
 
       line.style.top = `${start}px`;
       line.style.height = `${Math.max(0, end - start)}px`;

@@ -1,0 +1,95 @@
+@import "../../sass/mixins.sass"
+
+.card
+  background: var(--paper)
+  border: 1px solid var(--line)
+  border-top: 3px solid var(--accent)
+  box-shadow: 0 14px 34px #13223812
+  display: flex
+  flex-direction: column
+  min-height: 310px
+  padding: clamp(1.5rem, 4vw, 3rem)
+  transition: transform .2s ease, box-shadow .2s ease
+  &:hover
+    box-shadow: 0 20px 42px #13223820
+    transform: translateY(-4px)
+
+.cardTopline
+  color: var(--accent-dark)
+  display: flex
+  font-family: var(--font-mono)
+  font-size: var(--type-label)
+  justify-content: space-between
+  letter-spacing: .08em
+  text-transform: uppercase
+
+.title
+  color: var(--ink)
+  font-size: var(--type-heading)
+  line-height: 1.05
+  margin: 2.5rem 0 1rem
+
+.description
+  color: var(--muted-ink)
+  font-size: var(--type-reading)
+  line-height: 1.7
+  margin: 0
+  max-width: 720px
+
+.technical
+  color: var(--muted-ink)
+  font-size: var(--type-body)
+  line-height: 1.6
+  margin: 1rem 0 0
+  max-width: 720px
+
+.technologies
+  display: flex
+  flex-wrap: wrap
+  gap: .5rem
+  list-style: none
+  margin: 1.5rem 0 0
+  padding: 0
+  li
+    border: 1px solid var(--line)
+    color: var(--ink)
+    font-family: var(--font-mono)
+    font-size: var(--type-label)
+    padding: .4rem .65rem
+
+.actions
+  align-items: center
+  border-top: 1px solid var(--line)
+  display: flex
+  flex-wrap: wrap
+  gap: 1.5rem
+  margin-top: 2rem
+  padding-top: 1.25rem
+  a
+    color: var(--accent-dark)
+    font-size: var(--type-body)
+    font-weight: 600
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+    span
+      display: inline-block
+      margin-left: .25rem
+      transition: transform .2s ease
+    &:hover span
+      transform: translate(2px, -2px)
+
+@include medium-large
+  .card
+    min-height: 280px
+
+@include phone
+  .card
+    min-height: 0
+    padding: 1.25rem
+  .title
+    margin-top: 2rem
+  .actions
+    align-items: flex-start
+    flex-direction: column
+    gap: .75rem

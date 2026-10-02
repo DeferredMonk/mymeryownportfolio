@@ -8,7 +8,6 @@ import Skills from "./components/Pages/Skills";
 import Experience from "./components/Pages/Experience";
 import Projects from "./components/Pages/Projects";
 import Footer from "./components/Pages/Footer";
-import Project from "./components/Pages/Project";
 
 function App() {
   const [portfolio, setPortfolio] = useState(null);
@@ -45,7 +44,6 @@ function App() {
               </React.Fragment>
             }
           />
-          <Route path="/project/:id" element={<Project projects={portfolio.projects} />} />
         </Routes>
       </BrowserRouter>
     </div>
