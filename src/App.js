@@ -39,7 +39,7 @@ function App() {
               <React.Fragment>
                 <Landingpage portfolio={portfolio} />
                 <Skills portfolio={portfolio} />
-                <Experience />
+                <Experience experiences={portfolio.workExperiences} />
                 <Projects projects={portfolio.projects} />
                 <Footer email={portfolio.contact.email || portfolio.person.email} />
               </React.Fragment>

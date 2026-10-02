@@ -14,20 +14,22 @@ const Projects = ({ projects }) => {
 
   return (
     <div id="projects" ref={ref} className={styles.projects}>
-      <h1 className={styles.projectsHeader}>My projects!</h1>
-      <p className={styles.sectionLabel}>03 / Selected work</p>
-      <p className={styles.projectsDescription}>
-        Find listed below a list of projects created by me during school classes
-        and free time!
-      </p>
-      <div className={styles.projectsContainer}>
-        {projects.map((project) => {
-          return project.src.srcLive ? (
-            <FeProjectCard key={project.id} project={project} width={width} />
-          ) : (
-            <BeProjectCard key={project.id} project={project} width={width} />
-          );
-        })}
+      <div className={styles.content}>
+        <h1 className={styles.projectsHeader}>My projects!</h1>
+        <p className={styles.sectionLabel}>03 / Selected work</p>
+        <p className={styles.projectsDescription}>
+          Find listed below a list of projects created by me during school classes
+          and free time!
+        </p>
+        <div className={styles.projectsContainer}>
+          {projects.map((project) => {
+            return project.src.srcLive ? (
+              <FeProjectCard key={project.id} project={project} width={width} />
+            ) : (
+              <BeProjectCard key={project.id} project={project} width={width} />
+            );
+          })}
+        </div>
       </div>
     </div>
   );

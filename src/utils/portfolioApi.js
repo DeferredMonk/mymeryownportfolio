@@ -15,9 +15,16 @@ export const normalizePortfolio = (data) => {
     person: data.person || {},
     hero,
     about,
-    skills: data.content?.skills || [],
     contact: data.content?.contact || {},
     profileImage: resolveMediaUrl(data.person?.profile_image),
+    workExperiences: (data.work_experiences || []).slice().reverse().map((experience) => ({
+      startDate: experience.start_date,
+      endDate: experience.end_date,
+      title: experience.title,
+      company: experience.company,
+      summary: experience.summary,
+      focus: experience.focus || [],
+    })),
     projects: (data.projects || []).map((project) => ({
       id: project.slug,
       name: project.title,
