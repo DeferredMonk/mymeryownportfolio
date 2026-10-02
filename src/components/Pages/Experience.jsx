@@ -78,6 +78,13 @@ const Experience = ({ experiences }) => {
   const [isCompact, setIsCompact] = useState(
     () => window.matchMedia?.("(max-width: 1023px)").matches ?? false,
   );
+  const orderedExperiences = experiences.map((experience, index) => ({
+    experience,
+    index,
+  }));
+  const displayedExperiences = isCompact
+    ? orderedExperiences.slice().reverse()
+    : orderedExperiences;
 
   useEffect(() => {
     const viewport = timelineViewportRef.current;
@@ -256,7 +263,7 @@ const Experience = ({ experiences }) => {
         >
           <div ref={timelineRef} className={styles.timeline}>
             <div ref={timelineLineRef} className={styles.timelineLine} />
-            {experiences.map((experience, index) => (
+            {displayedExperiences.map(({ experience, index }) => (
               <article
                 className={`${styles.milestone} ${
                   activeExperience?.index === index ? styles.activeMilestone : ""
