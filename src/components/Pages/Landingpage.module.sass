@@ -35,7 +35,7 @@
 .kicker
   color: var(--accent-dark)
   font-family: var(--font-mono)
-  font-size: .72rem
+  font-size: var(--type-label)
   letter-spacing: .08em
   margin: 0 0 1.5rem
   text-transform: uppercase
@@ -47,40 +47,31 @@
 
 .offer
   color: var(--ink)
-  font-size: 1.65rem
+  font-size: var(--type-lead)
   font-weight: 500
   line-height: 1.25
   margin: 2rem 0 0
   max-width: 620px
-  @include medium-large
-    font-size: 1.35rem
 
 .header
   margin: 0
   color: var(--ink)
-  font-size: 6rem
+  font-size: var(--type-display)
   line-height: .95
   letter-spacing: 0
-  @include medium-large
-    font-size: 4rem
-  @include phone
-    font-size: 3rem
 
 .subHeader
   margin: 0
   color: var(--accent-dark)
-  font-size: 1.15rem
+  font-size: var(--type-subheading)
   font-weight: 600
   letter-spacing: .08em
   text-transform: uppercase
-  @include phone
-    font-size: small
-    margin-bottom: 15%
 
 .heroMeta
   display: flex
-  flex-wrap: wrap
-  gap: .75rem 2rem
+  flex-direction: column
+  gap: .75rem
   margin-top: 1.5rem
 
 .metaItem
@@ -90,14 +81,14 @@
 .metaLabel
   color: var(--accent-dark)
   font-family: var(--font-mono)
-  font-size: .72rem
+  font-size: var(--type-label)
   letter-spacing: .06em
   text-transform: uppercase
   margin: 0 0 .2rem
 
 .metaValue
   color: var(--muted-ink)
-  font-size: .95rem
+  font-size: var(--type-body)
   line-height: 1.4
   margin: 0
 
@@ -139,7 +130,7 @@
 
 .offer
   @include phone
-    font-size: 1.1rem
+    font-size: var(--type-lead)
 
 @keyframes appear
   from

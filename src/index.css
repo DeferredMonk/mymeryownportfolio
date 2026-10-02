@@ -11,6 +11,43 @@
   --accent: #e16b4c;
   --accent-dark: #b94d32;
   --wash: #e8eef2;
+  --type-micro: .55rem;
+  --type-label: .7rem;
+  --type-small: .85rem;
+  --type-body: 1rem;
+  --type-reading: 1.05rem;
+  --type-lead: 1.65rem;
+  --type-subheading: 1.5rem;
+  --type-heading: 3rem;
+  --type-display: 6rem;
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --type-micro: .52rem;
+    --type-label: .66rem;
+    --type-small: .8rem;
+    --type-body: .95rem;
+    --type-reading: 1rem;
+    --type-lead: 1.3rem;
+    --type-subheading: 1.25rem;
+    --type-heading: 2.5rem;
+    --type-display: 4rem;
+  }
+}
+
+@media (max-width: 479px) {
+  :root {
+    --type-micro: .5rem;
+    --type-label: .62rem;
+    --type-small: .75rem;
+    --type-body: .9rem;
+    --type-reading: .95rem;
+    --type-lead: 1.1rem;
+    --type-subheading: 1rem;
+    --type-heading: 1.8rem;
+    --type-display: 2.75rem;
+  }
 }
 
 * {

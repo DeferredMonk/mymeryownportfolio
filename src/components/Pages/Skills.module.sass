@@ -16,7 +16,7 @@
 .sectionLabel
   color: var(--accent-dark)
   font-family: var(--font-mono)
-  font-size: .7rem
+  font-size: var(--type-label)
   letter-spacing: .08em
   margin: 0
   text-transform: uppercase
@@ -25,15 +25,17 @@
   font-family: var(--font-page)
   align-items: center
   display: flex
+  min-width: 0
   width: 100%
   justify-content: space-around
   gap: 5rem
   max-width: 1200px
-  margin: 0
+  margin: 1.5rem auto
   padding: 3rem 0
   @include medium-large
-    margin: 0 auto
+    margin: 1.5rem auto
     flex-direction: column
+    gap: 2rem
     text-align: left
 
 .active
@@ -46,19 +48,18 @@
 .smallHeader
   text-align: left
   color: var(--ink)
-  font-size: 2.6rem
+  font-size: var(--type-heading)
   line-height: 1.1
   width: 100%
   @include medium-large
     margin: 0 auto
   @include phone
-    font-size: 20px
     margin: 0
     width: auto
 
 .speechAboutMe
   color: var(--muted-ink)
-  font-size: 1.05rem
+  font-size: var(--type-reading)
   @include medium-large
     margin: auto
     text-align: left
@@ -66,15 +67,19 @@
     width: auto
 
 .speech
+  min-width: 0
   width: 500px
   line-height: 1.7
+  @include medium-large
+    max-width: 100%
+    width: 100%
   @include phone
-    width: 80%
+    width: 100%
 
 .eyebrow
   color: var(--accent-dark)
   font-family: var(--font-mono)
-  font-size: .7rem
+  font-size: var(--type-label)
   letter-spacing: .08em
   margin: 0 0 1rem
   text-transform: uppercase
@@ -82,7 +87,7 @@
 .strengthsHeader
   border-top: 1px solid var(--line)
   color: var(--ink)
-  font-size: 1rem
+  font-size: var(--type-body)
   margin: 2rem 0 1rem
   padding-top: 1rem
 
@@ -108,11 +113,11 @@
   h4
     color: var(--ink)
     flex: 0 0 5rem
-    font-size: .85rem
+    font-size: var(--type-small)
     margin: 0
   p
     color: var(--muted-ink)
-    font-size: .9rem
+    font-size: var(--type-small)
     margin: 0
 
 .meContainer
@@ -156,13 +161,13 @@
   font-weight: 700
   margin: 0 0 .35rem
   @include phone
-    font-size: 18px
+    font-size: var(--type-body)
 
 .desPersSkill
   margin: 0
   color: var(--muted-ink)
   @include phone
-    font-size: 15px
+    font-size: var(--type-small)
 
 @include phone
   .strengths

@@ -12,7 +12,10 @@ const ListItemText = ({
         {primary}
       </h5>
       {secondary && (
-        <p className={secondaryClassName} style={{ fontSize: "10px", opacity: "50%" }}>
+        <p
+          className={secondaryClassName}
+          style={{ fontSize: "var(--type-micro)", opacity: "50%" }}
+        >
           @{secondary}
         </p>
       )}
