@@ -1110,10 +1110,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@beta/devicons-react@npm:devicons-react@1.6.0":
-  version "1.6.0-beta.15"
-  resolved "https://registry.yarnpkg.com/devicons-react/-/devicons-react-1.6.0-beta.15.tgz#8f3e68ba6f7c10576f899d5df8071b45a799d402"
-  integrity sha512-tuZaPxAJc10XBjwX6TB/0qnFPAW6HJQ7pSnYmcntsBsFeU2u5jR+zM1nCPxfnGIQJptVYq6OH2ImvATCU18BVg==
+"@beta/devicons-react@npm:devicons-react@1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/devicons-react/-/devicons-react-1.5.0.tgz#a8059090ecb2d9da0904c42f0c6454755dba48e9"
+  integrity sha512-8DYsWpgdbwI7ENDyC6Z9eqV72H01zUIAeRRo+UxBAq4clpPWcFhtqDrWSm0i5GUqbn/iNyiIfT1K69y0XLsscg==
 
 "@csstools/normalize.css@*":
   version "12.1.1"
