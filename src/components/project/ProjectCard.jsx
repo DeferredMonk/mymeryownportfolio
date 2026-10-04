@@ -22,12 +22,12 @@ const ProjectCard = ({ project, index }) => (
     {(project.src.srcLive || project.src.srcSource) && (
       <div className={styles.actions}>
         {project.src.srcLive && (
-        <a href={project.src.srcLive} target="_blank" rel="noreferrer">
+        <a href={project.src.srcLive}>
           Visit live site <span aria-hidden="true">↗</span>
         </a>
         )}
         {project.src.srcSource && (
-        <a href={project.src.srcSource} target="_blank" rel="noreferrer">
+        <a href={project.src.srcSource}>
           Source code <span aria-hidden="true">↗</span>
         </a>
         )}

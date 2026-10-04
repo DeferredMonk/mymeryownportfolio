@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Backend API
+
+Set `REACT_APP_API_URL` to the backend origin before starting or building the app.
+Copy `.env.example` to `.env.local` for local development; configure the same
+variable in the frontend hosting provider for production. The backend must allow
+the frontend origin in `CORS_ALLOWED_ORIGINS`.
+
 ## Available Scripts
 
 In the project directory, you can run:

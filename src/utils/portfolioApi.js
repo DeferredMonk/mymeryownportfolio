@@ -1,6 +1,6 @@
-const API_URL =
-  "http://localhost:8000/api/portfolio/?domain=deferredmonk.netlify.app";
-const API_ORIGIN = new URL(API_URL).origin;
+const API_ORIGIN = process.env.REACT_APP_API_URL || "http://localhost:8000";
+const API_URL = new URL("/api/portfolio/", API_ORIGIN);
+API_URL.searchParams.set("domain", "deferredmonk.netlify.app");
 
 const resolveMediaUrl = (path) => {
   if (!path) return "";
@@ -47,4 +47,23 @@ export const fetchPortfolio = async (signal) => {
     throw new Error(`Portfolio API request failed (${response.status})`);
   }
   return normalizePortfolio(await response.json());
+};
+
+export const submitContactMessage = async (message) => {
+  const contactUrl = new URL("/api/portfolio/contact/", API_ORIGIN);
+  contactUrl.searchParams.set("domain", "deferredmonk.netlify.app");
+  const response = await fetch(contactUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(message),
+  });
+  const result = await response.json();
+  if (!response.ok) {
+    const detail =
+      typeof result.detail === "string"
+        ? result.detail
+        : "Unable to send your message right now. Please try again later.";
+    throw new Error(detail);
+  }
+  return result;
 };

@@ -94,6 +94,25 @@
   line-height: 1.4
   margin: 0
 
+.socialLinks
+  display: flex
+  flex-wrap: wrap
+  gap: 1.5rem
+  margin-top: 1.5rem
+  a
+    color: var(--accent-dark)
+    font-size: var(--type-body)
+    font-weight: 600
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+    span
+      display: inline-block
+      margin-left: .25rem
+      transition: transform .2s ease
+    &:hover span
+      transform: translate(2px, -2px)
+
 .InteractionButton
   color: var(--surface)
   text-decoration: none

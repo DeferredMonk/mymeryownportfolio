@@ -30,6 +30,18 @@ const Landingpage = ({ portfolio }) => {
                 </div>
               )}
             </div>
+            <nav className={styles.socialLinks} aria-label="Social media">
+              <a href="https://github.com/DeferredMonk" target="_blank" rel="noreferrer">
+                GitHub <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/marco-angeli-0ba429170/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn <span aria-hidden="true">↗</span>
+              </a>
+            </nav>
             <p className={styles.offer}>
               I create clear, modern websites that help small businesses look
               credible and get found online.
