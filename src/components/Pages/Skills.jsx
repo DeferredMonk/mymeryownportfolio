@@ -2,12 +2,6 @@ import React, { useRef } from "react";
 import { useProfileReveal } from "../Hooks/useProfileReveal";
 import styles from "./Skills.module.sass";
 
-const technologyGroups = [
-  { title: "Frontend", technologies: ["React", "JavaScript"] },
-  { title: "Backend", technologies: ["Python", "Django", "C#", "ASP.NET Core"] },
-  { title: "Data", technologies: ["SQL"] },
-];
-
 const Skills = ({ portfolio }) => {
   const wrapperRef = useRef();
   const isProfileVisible = useProfileReveal(wrapperRef);
@@ -29,13 +23,12 @@ const Skills = ({ portfolio }) => {
             <img className={styles.me} src={portfolio.profileImage} alt={portfolio.person.name} />
           </div>
           <div className={styles.speech}>
-            <h2 className={styles.smallHeader}>About Me</h2>
             <p ref={wrapperRef} className={styles.speechAboutMe}>
               {about.text}
             </p>
             <h3 className={styles.strengthsHeader}>What I work with</h3>
             <div className={styles.technologyGroups}>
-              {technologyGroups.map((group) => (
+              {about.technical_skills.map((group) => (
                 <div className={styles.technologyGroup} key={group.title}>
                   <h4>{group.title}</h4>
                   <p>{group.technologies.join(", ")}</p>

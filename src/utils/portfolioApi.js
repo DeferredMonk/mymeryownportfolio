@@ -1,6 +1,7 @@
 const API_ORIGIN = process.env.REACT_APP_API_URL || "http://localhost:8000";
+const DOMAIN = window.location.hostname.replace(/^www\./, "");
 const API_URL = new URL("/api/portfolio/", API_ORIGIN);
-API_URL.searchParams.set("domain", "deferredmonk.netlify.app");
+API_URL.searchParams.set("domain", DOMAIN);
 
 const resolveMediaUrl = (path) => {
   if (!path) return "";
