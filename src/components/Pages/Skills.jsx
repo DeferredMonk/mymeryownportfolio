@@ -26,22 +26,24 @@ const Skills = ({ portfolio }) => {
             <p ref={wrapperRef} className={styles.speechAboutMe}>
               {about.text}
             </p>
-            <h3 className={styles.strengthsHeader}>What I work with</h3>
-            <div className={styles.technologyGroups}>
-              {about.technical_skills.map((group) => (
-                <div className={styles.technologyGroup} key={group.title}>
-                  <h4>{group.title}</h4>
-                  <p>{group.technologies.join(", ")}</p>
-                </div>
-              ))}
-            </div>
-            <h3 className={styles.strengthsHeader}>How I work</h3>
+            <h3 className={styles.strengthsHeader}>What kind of colleague I am</h3>
             <div className={styles.strengths}>
               {(about.personal_skills || []).map((skill) => (
                 <article className={styles.strength} key={skill.title}>
                   <h4 className={styles.personalSkill}>{skill.title}</h4>
                   <p className={styles.desPersSkill}>{skill.text}</p>
                 </article>
+              ))}
+            </div>
+            <h3 className={styles.strengthsHeader}>What I work with</h3>
+            <div className={styles.strengths}>
+              {about.technical_skills.map((group) => (
+                <div className={styles.technologyGroup} key={group.title}>
+                  <h4>{group.title}</h4>
+                  {group.technologies.map ((technology) => (
+                    <p key={technology}>{technology}</p>
+                  ))}
+                </div>
               ))}
             </div>
           </div>
